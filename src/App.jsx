@@ -10,6 +10,7 @@ function App() {
     <>
     <div>merhaba</div>
     <div>merhaba</div>
+    <div>selam</div>
       <div>
         <a href="https://github.com/Workintech/fsweb-s7-challenge-pizza" target="_blank">
           <img src={workintech} className="logo" alt="Workintech logo" />
