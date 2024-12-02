@@ -1,203 +1,210 @@
 import React, { useEffect, useState } from 'react';
 import './orderPizza.css';
 import logo from "../assets/logo.svg"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback } from 'reactstrap';
 
-function PizzaOrderForm() {
-  const [size, setSize] = useState('Küçük');
-  const [dough, setDough] = useState('Hamur Kalınlığı');
-  const [extras, setExtras] = useState({
-    sos: false,
-    pepperoni: false,
-    sucuk: false,
-    mısır: false,
-    domates: false,
-    ananas: false,
-  });
-  const [orderNote, setOrderNote] = useState('');
-  const [quantity, setQuantity] = useState(1);
+const initialData={
+  boyut:"",
+  hamur:"",
+  ekMalzeme:[],
+  siparişNotu:"",
+  miktar:"",
+}
 
-  const handleExtrasChange = (event) => {
-    const { name, checked } = event.target;
-    setExtras((prev) => ({
-      ...prev,
-      [name]: checked,
-    }));
-  };
-  useEffect(() => {
-    document.body.className = "order-body";
-  }, []);
 
-  const handleNoteChange = (event) => {
-    setOrderNote(event.target.value);
-  };
-
-  const handleSizeChange = (event) => {
-    setSize(event.target.value);
-  };
-
-  const handleDoughChange = (event) => {
-    setDough(event.target.value);
-  };
-
-  const calculateTotal = () => {
-    let total = 85.50;
-
-    if (size === 'Orta') total += 5;
-    if (size === 'Büyük') total += 10;
-
-    if (extras.sos) total += 2;
-    if (extras.pepperoni) total += 3;
-    if (extras.sucuk) total += 3;
-    if (extras.mısır) total += 1;
-    if (extras.domates) total += 1;
-    if (extras.ananas) total += 2;
-
-    return total * quantity;
-  };
-
-  return (
-    <>
-    <header className='header-order'>
-        <img src={logo} alt="" />
-        <div> 
-            <a href="">Anasayfa</a>
-            <a href="">Seçenekler</a>
-            <a href="">Sipariş Oluştur</a>
-           
-         </div>
-         </header>
-    <div>
-        
-        <h3>Position Absolute Acı Pizza</h3>
-
-        <p><span>85.50 ₺</span></p>
-        <p>4.9</p>
-        <p>(200)</p>
-    </div>
-    <div className='pizza-explain'>
-        <p>Frontent Dev olarak hala positicn:absolute kullanıyorsan bu çok acı pizza tam sana
-göre. Pizza, domates. peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha
-sonra geleneksel olarak odun ateşi ide bir fırında yüksek sıcaklıkta pişirilen,
-genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan
-kökenli lezzetli bir yemektir.. Küçük bir pizzaya bazen pizzetta denir.</p>
-    </div>
+const ekmalzeme=[
+  { name: 'Pepperoni', label: 'Pepperoni' },
+  { name: 'Sosis', label: 'Sosis' },
+  { name: 'Kanada Jambonu', label: 'Kanada Jambonu' },
+  { name: 'Tavuk Izgara', label: 'Tavuk Izgara' },
+  { name: 'Soğan', label: 'Soğan' },
+  { name: 'Domates', label: 'Domates' },
+  { name: 'Mısır', label: 'Mısır' },
+  { name: 'Sucuk', label: 'Sucuk' },
+  { name: 'Jalepeno', label: 'Jalepeno' },
+  { name: 'Sarımsak', label: 'Sarımsak' },
+  { name: 'Biber', label: 'Biber' },
+  { name: 'Ananas', label: 'Ananas' },
+  { name: 'Kabak', label: 'Kabak' },
 
   
-    <div className="pizza-order-form">
-      <h3>Boyut Seç</h3>
-      <label>
-        Küçük
-        <input
-          type="radio"
-          name="size"
-          value="Küçük"
-          checked={size === 'Küçük'}
-          onChange={handleSizeChange}
-        />
-      </label>
-      <label>
-        Orta
-        <input
-          type="radio"
-          name="size"
-          value="Orta"
-          checked={size === 'Orta'}
-          onChange={handleSizeChange}
-        />
-      </label>
-      <label>
-        Büyük
-        <input
-          type="radio"
-          name="size"
-          value="Büyük"
-          checked={size === 'Büyük'}
-          onChange={handleSizeChange}
-        />
-      </label>
+]
+function PizzaOrderForm() {
+  const [form, setForm] = useState(initialData);
+  const [count, setCount] = useState(1);
+  const handleChange = (event) => {
+    let { name, value, type, checked } = event.target;
+    
+    if (type === "checkbox") {
+      let newMalzemeler = [...form.ekMalzeme];
+      if(checked) {
+        newMalzemeler.push(name);
+      } else {
+        newMalzemeler = newMalzemeler.filter((item) => item !== name);
+      }
+      setForm({...form, ekMalzeme: newMalzemeler});
+    } else {
+      setForm({ ...form, [name]: value });
+    }
+  };
 
-      <h3>Hamur Seç</h3>
-      <select value={dough} onChange={handleDoughChange}>
-        <option value="Hamur Kalınlığı">Hamur Kalınlığı</option>
-        <option value="İnce">İnce</option>
-        <option value="Kalın">Kalın</option>
-      </select>
+  function handleDecree(){
+    if(count>1){
+      setCount(count-1)
+    }
 
-      <h3>Ek Malzemeler</h3>
-      <label>
-        Sos
-        <input
-          type="checkbox"
-          name="sos"
-          checked={extras.sos}
-          onChange={handleExtrasChange}
-        />
-      </label>
-      <label>
-        Pepperoni
-        <input
-          type="checkbox"
-          name="pepperoni"
-          checked={extras.pepperoni}
-          onChange={handleExtrasChange}
-        />
-      </label>
-      <label>
-        Sucuk
-        <input
-          type="checkbox"
-          name="sucuk"
-          checked={extras.sucuk}
-          onChange={handleExtrasChange}
-        />
-      </label>
-      <label>
-        Mısır
-        <input
-          type="checkbox"
-          name="mısır"
-          checked={extras.mısır}
-          onChange={handleExtrasChange}
-        />
-      </label>
-      <label>
-        Domates
-        <input
-          type="checkbox"
-          name="domates"
-          checked={extras.domates}
-          onChange={handleExtrasChange}
-        />
-      </label>
-      <label>
-        Ananas
-        <input
-          type="checkbox"
-          name="ananas"
-          checked={extras.ananas}
-          onChange={handleExtrasChange}
-        />
-      </label>
 
-      <h3>Sipariş Notu</h3>
-      <textarea
-        value={orderNote}
-        onChange={handleNoteChange}
-        placeholder="Siparişinize eklemek istediğiniz notu buraya yazın."
-      />
+  }
+  function handleIncrease(){
+    setCount(count+1)
 
-      <div className="quantity-buttons">
-        <button onClick={() => setQuantity(quantity - 1)}>-</button>
-        <span>{quantity}</span>
-        <button onClick={() => setQuantity(quantity + 1)}>+</button>
-      </div>
+  }
+  const handleSubmit=(event)=> {
+    event.preventDefault();
+    const updatedForm = { ...form, miktar: count };
+  }
 
-      <div className="order-summary">
-        <p>Sipariş Toplamı: <span className="siparis-toplam">{calculateTotal()} ₺</span></p>
-        <button className="order-button">Siparişi Ver</button>
-      </div>
-    </div>
-    </>  );
+     return(
+      <>
+       <header className='header'>
+        <img src={logo} alt="Logo" />
+      </header>
+      <section className=''>
+        <div className='icerik'>
+          
+          <nav>
+        <a href="#">Anasayfa-</a>
+        
+        <a href="#">Seçenekler</a>
+        
+        <a href="#">-Sipariş Oluştur</a>
+        
+        </nav>
+
+        <h2>Position absolute Acı Pizza</h2>
+        <div className='pizzaInfo'>
+
+        <h1>85.5 ₺</h1>
+            <p>4.9</p>
+            <p>(200)</p>
+        </div>
+        <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
+        </div>
+
+      </section>
+
+
+      <Form className='order-pizza-form'>
+      <section className='boyut'>
+        <div className='form-row'>
+        <FormGroup >
+        <Label>
+                Boyut Seç*
+              </Label>
+        <FormGroup check>
+              
+              <Input name='boyut'
+              type='radio'
+              value="S"
+              onChange={handleChange}
+              />
+              <Label>Küçük</Label>
+
+      </FormGroup>
+      <FormGroup check>
+      <Input name='boyut'
+              type='radio'
+              value="M"
+              onChange={handleChange}
+              />
+              <Label>Orta</Label>
+
+      </FormGroup>
+      <FormGroup check>
+      <Input name='boyut'
+              type='radio'
+              value="L"
+              onChange={handleChange}
+              />
+              <Label>Büyük</Label>
+
+      </FormGroup>
+      </FormGroup>
+       
+
+      <FormGroup >
+        <Label>
+                Hamur Seç*
+              </Label>
+              <Input id='hamurKalınlık'
+              name='hamur'
+              type='select'
+              onChange={handleChange }
+              >
+                
+              <option value="">Hamur Kalınlığı </option>
+              <option value="İnce">İnce</option>
+                  <option value="Orta">Orta</option>
+                  <option value="Kalın">Kalın</option> 
+</Input>
+</FormGroup>
+
+</div>
+
+
+</section>
+
+<section className='ekMalzeme'>
+  <FormGroup check>
+<Label>
+  Ek Malzemeler
+</Label><br />
+<FormText>En fazla 10 malzeme seçebilirsiniz.5t</FormText>
+
+  <br />
+  <div className='malzeme-columns'>
+  {ekmalzeme.map(malzeme => (
+                <div className="material-item" key={malzeme.name}>
+                  <Input type="checkbox" onChange={handleChange} name={malzeme.name} />
+                  <Label check>{malzeme.label}</Label>
+                </div>
+                ))}
+  </div>
+  </FormGroup>
+  
+</section>
+
+<FormGroup className='form-text-area'>
+            <Label for="siparisNotu">Sipariş Notu</Label>
+            <Input
+              id="siparisNotu"
+              name="siparisNotu"
+              placeholder="Siparişine eklemek istediğin bir not var mı?"
+              type="text"
+              onChange={handleChange}
+              data-cy="siparis-notu" />
+          </FormGroup>
+                  <section className='odeme-container'>
+                    <div className='sayac'>
+                    <Button type='button' onClick={handleDecree}>-</Button>
+                    <p className='sayac-value'>{count}</p>
+                    <Button type='button' onClick={handleIncrease}>+</Button>
+
+                    </div>
+
+                    <div className='siparis-containet'>
+                    <h2>Sipariş Toplamı</h2>
+                    <div><p>Seçimler</p> <p>{form.ekMalzeme.length*5}</p></div>
+                    <div><p>Toplam</p> <p>{(85.5*count)+(form.ekMalzeme.length*5)}</p></div>
+                    <Button onClick={handleSubmit} size="lg" type='submit' >SİPARİŞ VER</Button>
+                    
+                    </div>
+
+                  </section>
+      </Form>
+      </>
+     )
 }
 
 export default PizzaOrderForm;
