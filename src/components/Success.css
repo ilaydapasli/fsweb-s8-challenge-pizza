@@ -1,0 +1,13 @@
+
+.success-body{
+    background-color: #CE2829;
+}
+.success-page{
+    background-color: #CE2829;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
