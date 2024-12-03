@@ -19,7 +19,7 @@ export default function Home(){
         <div className='main-titleandlogo'>
       <img src={Logos} alt="Logo" />
     <h1 className='main-title'>KOD ACIKTIRIR <br /> PİZZA DOYURUR</h1>
-    <button className='anasayfa-buton' onClick={handleButton} >ACIKTIM</button>
+    <button type='button' className='anasayfa-buton' onClick={handleButton} >ACIKTIM</button>
     </div>
         </>
     )
