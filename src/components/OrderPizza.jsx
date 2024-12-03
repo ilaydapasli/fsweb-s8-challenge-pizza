@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './orderPizza.css';
+import axios from 'axios';
 import logo from "../assets/logo.svg"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback } from 'reactstrap';
+import { useHistory } from 'react-router-dom';
 
 const initialData={
   boyut:"",
@@ -30,9 +32,13 @@ const ekmalzeme=[
 
   
 ]
-function PizzaOrderForm() {
+function PizzaOrderForm({onSubmit}) {
   const [form, setForm] = useState(initialData);
   const [count, setCount] = useState(1);
+  const [isValid, setIsValid] = useState(false);
+
+  const history = useHistory();
+
   const handleChange = (event) => {
     let { name, value, type, checked } = event.target;
     
@@ -63,6 +69,22 @@ function PizzaOrderForm() {
   const handleSubmit=(event)=> {
     event.preventDefault();
     const updatedForm = { ...form, miktar: count };
+
+     
+    axios
+    .post('https://reqres.in/api/pizza', updatedForm)
+    .then(response => {
+      onSubmit(response.data);
+      if (isValid === true) {
+        history.push("/siparis-alindi");
+      }else {
+        throw new Error("Sipariş verileri eksik veya hatalı")
+      }
+    })
+    .catch(error => {
+      return <Error />;
+
+    });
   }
 
      return(
@@ -74,11 +96,11 @@ function PizzaOrderForm() {
         <div className='icerik'>
           
           <nav>
-        <a href="#">Anasayfa-</a>
+        <a href="/">Anasayfa-</a>
         
         <a href="#">Seçenekler</a>
         
-        <a href="#">-Sipariş Oluştur</a>
+        <a href="/siparis-olustur">-Sipariş Oluştur</a>
         
         </nav>
 
@@ -140,7 +162,7 @@ function PizzaOrderForm() {
               <Input id='hamurKalınlık'
               name='hamur'
               type='select'
-              onChange={handleChange }
+              onChange={handleChange}
               >
                 
               <option value="">Hamur Kalınlığı </option>
