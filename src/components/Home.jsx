@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import Logos  from "../assets/logo.svg";
 import "./Home.css"
 import { useHistory } from 'react-router-dom';
+import Footer from './Footer';
 export default function Home(){
    
   const history = useHistory();
@@ -21,6 +22,7 @@ export default function Home(){
     <h1 className='main-title'>KOD ACIKTIRIR <br /> PİZZA DOYURUR</h1>
     <button type='submit' className='anasayfa-buton' onClick={handleButton} >ACIKTIM</button>
     </div>
+    <Footer></Footer>
         </>
     )
 }
