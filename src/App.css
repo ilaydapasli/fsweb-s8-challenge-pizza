@@ -3,3 +3,32 @@
 
 
 
+footer {
+    background-color: #1A1A1A;
+    height: 500px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+  }
+  footer div{
+    margin-top: 50px;
+  }
+  footer ul {
+    padding: 10px;
+    list-style-type: none;
+  }
+  footer li{
+    text-decoration: none;
+  }
+  .alt-footer{
+    height: 100px;
+    border-top: 1px solid white;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .alt-footer p{
+    margin-left: 50px;
+  }
+  footer img{
+    padding: 5px;
+  }
