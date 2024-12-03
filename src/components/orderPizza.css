@@ -1,159 +1,168 @@
 /* App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
 
-  .order-body{
-    margin: 0;
-    padding: 0;
-    
-  }
-  h1 {
-    color: #d9142d; /* Kırmızı renk */
-    font-size: 32px;
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
+.header{
+  width: 100%;
+  height: 180px;
+  background-color:#CE2829 ;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.header nav {
+  display: flex;
+  gap: 6px; 
+  margin-right: 300px;
   
-  .pizza-order-form {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-  }
+ 
+}
+.header nav a{
+  color: #fff;
+  font-weight: bold;
+
+}
+.header nav a:hover{
+ color: yellow;
+
+}
+.icerik{
   
-  h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+}
+.icerik-section{
   
-  label {
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  input[type="radio"],
-  input[type="checkbox"],
-  select {
-    margin: 10px 5px;
-    accent-color: #d9142d;
-  }
-  
-  textarea {
-    width: 100%;
-    height: 80px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    resize: none;
-    margin-top: 10px;
-  }
-  
-  button {
-    background-color: #fcd232;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #f1b72e;
-  }
-  
-  .order-button {
-    background-color: #fcd232;
-    border-radius: 25px;
-    padding: 15px 30px;
-    font-size: 20px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .order-button:hover {
-    background-color: #f1b72e;
-  }
-  
-  .quantity-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .quantity-buttons button {
-    padding: 10px 20px;
-    font-size: 18px;
-    margin: 0 10px;
-    background-color: #fcd232;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .quantity-buttons span {
-    font-size: 20px;
-    margin: 0 10px;
-  }
-  
-  .order-summary {
-    font-size: 18px;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
-  .siparis-toplam {
-    color: #ff5733;
-    font-size: 25px;
-    margin-top: 10px;
-  }
-  
-  button:active {
-    transform: scale(0.98);
-  }
-  /* CSS */
-.header-order {
-   
-    min-width: 90%;
-    height: 180px;
-    display: flex; /* İçerikleri yan yana hizalamak için */
-    justify-content: space-between; /* Logo ve menü arasında boşluk bırak */
-    align-items: center; /* Dikey olarak ortala */
-    background-color: #d9142d; /* Kırmızı arka plan */
-    padding: 10px 20px; /* İçerik etrafına boşluk */
-    color: white; /* Metinleri beyaz yap */
-    position: sticky; /* Sayfanın en üstüne sabitlemek için */
-    top: 0; /* Sayfanın en üstünde kalmasını sağla */
-    z-index: 1000; /* Üstteki diğer öğelerin önünde kalması için */
-  }
-  
-  .header-order img {
-    height: 50px; /* Logo boyutunu düzenle */
-  }
-  
-  .header-order div {
-    display: flex; /* Menüyü yan yana hizalamak için */
-    gap: 20px; /* Menü öğeleri arasına boşluk ekle */
-  }
-  
-  .header-order a {
-    color: white;
-    margin: 0; /* Varsayılan boşlukları kaldır */
-    cursor: pointer; /* Üzerine gelince el işareti */
-    font-size: 16px; /* Yazı boyutunu ayarla */
-    transition: color 0.3s ease; /* Geçiş efekti ekle */
-  }
-  
-  .header-order a:hover {
-    color: #fcd232; /* Üzerine gelince sarıya döndür */
-  }
-  
-  .header-order span {
-    font-weight: bold; /* "Sipariş Oluştur" kısmını kalın yap */
-  }
-  
+ 
+}
+.form-orta{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+
+
+/* Genel ayarlar */
+
+
+/* Header */
+
+
+
+
+
+
+
+
+/* İçerik alanı */
+
+.icerik-section {
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icerik-section h2 {
+  margin-bottom: 10px;
+}
+
+.pizzaInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pizzaInfo h1 {
+  color: #d32f2f;
+}
+
+.order-pizza-form {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boyut,
+.ekMalzeme {
+  margin-bottom: 20px;
+}
+
+.malzeme-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.malzeme-columns .material-item {
+  width: 30%;
+}
+
+.form-text-area {
+  margin-bottom: 20px;
+}
+
+.odeme-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.sayac {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sayac-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.siparis-containet {
+  text-align: right;
+}
+
+.siparis-containet h2 {
+  margin-bottom: 10px;
+}
+
+.siparis-containet p {
+  margin: 5px 0;
+}
+
+.siparis-containet p:last-child {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.siparis-containet button {
+  background-color: #ffc107;
+  border: none;
+  padding: 10px 20px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.siparis-containet button:hover {
+  background-color: #ffca28;
+}
