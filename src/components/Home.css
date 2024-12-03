@@ -19,3 +19,57 @@
   .main-titleandlogo{
     margin-top: -190px;
   }
+  /* Ana gövde ayarları */
+.home-body {
+  background-color: #CE2829; /* Kırmızı arka plan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Tam ekran yüksekliği */
+  margin: 0;
+  flex-direction: column;
+}
+
+/* Ana başlık ve logo kapsayıcısı */
+.main-titleandlogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Elemanlar arasında boşluk */
+}
+
+/* Logo ayarları */
+.main-titleandlogo img {
+  width: 550px; /* Logo boyutu */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Başlık ayarları */
+.main-title {
+  color: white;
+  text-align: center;
+  font-size: 4.5rem; /* Başlık boyutu */
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Buton ayarları */
+.anasayfa-buton {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem; /* Buton yazı boyutu */
+  background-color: yellow;
+  color: #000000; /* Kırmızı yazı rengi */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Hover efekt geçişi */
+}
+
+/* Buton hover efekti */
+.anasayfa-buton:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.1); /* Biraz büyütme efekti */
+}
