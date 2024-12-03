@@ -66,45 +66,44 @@ function PizzaOrderForm({onSubmit}) {
     setCount(count+1)
 
   }
-  const handleSubmit=(event)=> {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const updatedForm = { ...form, miktar: count };
-
-     
+  
     axios
-    .post('https://reqres.in/api/pizza', updatedForm)
-    .then(response => {
-      onSubmit(response.data);
-      if (isValid === true) {
-        history.push("/siparis-alindi");
-      }else {
-        throw new Error("Sipariş verileri eksik veya hatalı")
-      }
-    })
-    .catch(error => {
-      return <Error />;
-
-    });
-  }
+      .post('https://reqres.in/api/pizza', updatedForm)
+      .then(response => {
+        onSubmit(response.data);
+        history.push("/siparis-alindi"); // Yönlendirme
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+  
+  
 
      return(
       <>
+    
        <header className='header'>
         <img src={logo} alt="Logo" />
-      </header>
-      <section className=''>
-        <div className='icerik'>
-          
-          <nav>
-        <a href="/">Anasayfa-</a>
+        <nav>
+        <a href="/">Anasayfa -</a>
         
         <a href="#">Seçenekler</a>
         
-        <a href="/siparis-olustur">-Sipariş Oluştur</a>
+        <a href="/siparis-olustur">- Sipariş Oluştur</a>
         
         </nav>
+      </header>
+      <div className='form-orta'>
+      <section className='icerik-section'>
+        <div className='icerik'>
+          
+          
 
-        <h2>Position absolute Acı Pizza</h2>
+        <h2>Position Absolute Acı Pizza</h2>
         <div className='pizzaInfo'>
 
         <h1>85.5 ₺</h1>
@@ -225,6 +224,7 @@ function PizzaOrderForm({onSubmit}) {
 
                   </section>
       </Form>
+      </div>
       </>
      )
 }
