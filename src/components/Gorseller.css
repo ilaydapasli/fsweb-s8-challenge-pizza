@@ -1,0 +1,21 @@
+.cards{
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+  }
+  .card-subtitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .card-icerik{
+ 
+  }
+  .cards img{
+    padding: 30px;
+  }
