@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Success from './components/Success'
 import OrderPizza from "./components/OrderPizza"
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import HeaderPart from './components/HeaderPart';
 
 function App() {
  const [orderedData,setorderedData]=useState(null);
@@ -16,7 +17,7 @@ function App() {
  }
 
   return (
-    <Router>
+   /* <Router>
       <Switch>
       <Route exact path="/" >
 
@@ -29,7 +30,8 @@ function App() {
         <Success orderedData={orderedData}  />
       </Route >
       </Switch>
-    </Router>
+    </Router>*/
+    <HeaderPart />
    
   )
 }
