@@ -27,9 +27,9 @@ export default function Footer(){
                 <ul>Testler Geçti Mutlu Burger</ul>
                 <ul>Position Absolute Acı Burger</ul>
             </div>
-            <div className="footer-sutun">
-            <ul><img src={img1} alt="" /><img src={img2} alt="" /><img src={img3} alt="" /></ul><br />
-            <ul><img src={img4} alt="" /><img src={img5} alt="" /><img src={img6} alt="" /></ul>
+            <div  className="footer-img">
+            <img src={img1} alt="" /><img src={img2} alt="" /><img src={img3} alt="" />
+            <img src={img4} alt="" /><img src={img5} alt="" /><img src={img6} alt="" />
             </div>
             <footer className="alt-footer">
             <p>© 2023 Teknolojik Yemekler.</p>
