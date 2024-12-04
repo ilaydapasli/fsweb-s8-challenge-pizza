@@ -94,7 +94,7 @@ export default function Home(){
   </CardBody>
 </Card>
 </div>
-    <Footer></Footer>
+    
         </>
     )
 }
