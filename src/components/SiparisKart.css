@@ -1,0 +1,42 @@
+.card-main{
+    
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+  }
+.card-container {
+    display: flex;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 0px;
+    
+    font-size: larger;
+  
+  }
+  
+  .card-left {
+    margin-top: 50px;
+    flex: 1;
+    /* Sol taraftaki kartın genişliğini ayarla */
+  }
+  
+  .card-container-right {
+    display: flex;
+    flex-direction: column; /* Sağdaki kartları alt alta yerleştir */
+    flex: 1;
+    margin-top: 70px;
+    gap: 0;
+    /* Sağ taraftaki kartların toplam genişliğini ayarla */
+  }
+  
+  .card-right {
+    flex: 1;
+   
+    /* Sağdaki her bir kartın genişliğini ayarla */
+  }
+
+  .siparis-ver-button{
+    color: red;
+    background-color: white;
+    border-radius: 50px;
+  }
