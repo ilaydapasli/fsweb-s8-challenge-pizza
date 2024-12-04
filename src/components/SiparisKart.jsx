@@ -5,6 +5,7 @@ import pizzaBack from "../../Assets/Iteration-2-aseets/cta/kart-1.png";
 import burgerBack from "../../Assets/Iteration-2-aseets/cta/kart-2.png";
 import motoBack from "../../Assets/Iteration-2-aseets/cta/kart-3.png";
 import "./SiparisKart.css"
+import Gorseller from './gorseller';
 function SiparisKart() {
     document.body.style.backgroundColor = "beige";
 
@@ -99,7 +100,7 @@ function SiparisKart() {
     </div>
     </div>
 
-    
+    <Gorseller />
    </>
   )
 }
