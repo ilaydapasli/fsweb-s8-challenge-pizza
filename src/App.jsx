@@ -29,9 +29,6 @@ function App() {
         <Success orderedData={orderedData}  />
       </Route >
       </Switch>
-
-
-
     </Router>
    
   )
