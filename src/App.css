@@ -1,6 +1,8 @@
 
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 footer {
@@ -31,4 +33,14 @@ footer {
   }
   footer img{
     padding: 5px;
+  }
+  .footer-img{
+    display: flex; /* Flexbox düzenini etkinleştir */
+    flex-wrap: wrap; /* Elemanlar sığmadığında alt satıra geçsin */
+    justify-content: center; /* Elemanları yatayda ortala */
+    gap: 10px;
+
+  }.footer-img img {
+    width: 80px; /* Resimleri 3 sütun düzenine göre boyutlandır */
+    height: 80px; /* Oranlarını koruyarak yükseklik ayarla */
   }
