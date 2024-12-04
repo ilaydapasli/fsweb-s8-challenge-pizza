@@ -1,0 +1,41 @@
+/* Navbar Container */
+.first-menu-container {
+    width: 100%; /* Navbar tam genişlikte olsun */
+    display: flex;
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+    background-color: #f8f9fa; /* Navbar arka plan rengi */
+    padding: 10px 0; /* Üst ve alt boşluk */
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Öğeler arasında eşit boşluk bırak */
+    align-items: center; /* Öğeleri dikeyde ortala */
+    width: 65%; /* Navbar genişliği */
+  }
+  
+  /* NavbarBrand (Logo ve Yazı) */
+  .navbar-brand {
+    display: flex;
+    align-items: center; /* Resim ve yazıyı dikeyde hizala */
+    font-size: 18px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+    font-weight: bold; /* Kalın yazı */
+    margin-right: 20px; /* Sağda boşluk */
+  }
+  
+  /* Navbar Image */
+  .navbar-brand img {
+    width: 30px; /* Resim boyutu */
+    height: auto;
+    margin-right: 10px; /* Resim ile yazı arasına boşluk */
+  }
+  
+  /* Navbar Item Hover Effect */
+  .navbar-brand:hover {
+    color: #ff6347; /* Hover rengi */
+    transition: color 0.3s ease; /* Yumuşak geçiş */
+  }
+  
