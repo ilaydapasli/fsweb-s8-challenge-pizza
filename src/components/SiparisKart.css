@@ -1,5 +1,4 @@
-.card-main{
-    
+.card-main{ 
     margin: 0;
     padding: 0;
     margin-bottom: 50px;
@@ -40,3 +39,66 @@
     background-color: white;
     border-radius: 50px;
   }
+  /* Navbar Container */
+.second-menu-container {
+  width: 100%; /* Navbar tam genişlikte olsun */
+  display: flex;
+  justify-content: center; /* Yatayda ortala */
+  align-items: center; /* Dikeyde ortala */
+  background-color: rgb(245, 245, 235); /* Navbar arka plan rengi */
+  padding: 10px 0; /* Üst ve alt boşluk */
+  
+}
+
+/* Navbar */
+.second-menu-container .navbar {
+  display: flex;
+  justify-content: space-between; /* Öğeler arasında eşit boşluk bırak */
+  align-items: center; /* Öğeleri dikeyde ortala */
+  width: 68%; /* Navbar genişliği */
+}
+
+/* NavbarBrand (Logo ve Yazı)*/
+.second-menu-container .navbar-brand {
+  display: flex;
+  align-items: center; /* Resim ve yazıyı dikeyde hizala */
+  font-size: 18px; /* Yazı boyutu */
+  color: #333; /* Yazı rengi */
+  font-weight: bold; /* Kalın yazı */
+  margin-right: 20px; /* Sağda boşluk */
+  padding: 18px 30px; /* İçerik ile kenarlar arasındaki boşluk */
+  background-color: white; /* Arka plan rengi */
+  border-radius: 35px; /* Oval köşeler */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Hover geçişleri için */
+  text-decoration: none; /* Bağlantı alt çizgilerini kaldır */
+ 
+}
+
+/* Navbar Image */
+.second-menu-container .navbar-brand img {
+  width: 30px; /* Resim boyutu */
+  height: auto;
+  margin-right: 10px; /* Resim ile yazı arasına boşluk */
+}
+
+/* Navbar Item Hover Effect */
+.second-menu-container .navbar-brand:hover {
+  color: #ffffff; /* Hover rengi */
+  transition: color 0.3s ease; /* Yumuşak geçiş */
+}
+.second-menu-container .navbar-brand:hover{
+  background-color: rgb(46, 46, 46);
+} 
+.siparis-text span{
+  font-family: 'Satisfy', cursive;
+  font-size:40px ;
+}
+.siparis-text h1{
+  font-weight:bold ;
+}
+.siparis-text{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
