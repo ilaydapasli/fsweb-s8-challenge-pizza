@@ -1,0 +1,82 @@
+
+footer {
+    background-color: #1A1A1A;
+    height: 450px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  footer div{
+    margin-top: 50px;
+  }
+  footer ul {
+    padding: 6px;
+    list-style-type: none;
+    margin-top: 25px;
+  }
+  footer li{
+    text-decoration: none;
+  }
+  .alt-footer{
+    height: 100px;
+    border-top: 1px solid rgb(70, 67, 67);
+    justify-content:space-between;
+    align-items: center;
+    
+  }
+  .alt-footer p{
+    margin-left: 160px;
+  }
+  .alt-footer .FaTwitter{
+    background-color: red;
+  }
+ 
+  .footer-img{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    padding:20px;
+    margin-top: 20px;
+
+  }
+  .footer-column ul li img{
+    width: 25px; /* Görselin boyutu */
+    height: 25px;
+    margin-right: 10px;
+   
+  }
+  .footer-column ul li{
+    display: flex; /* Yan yana düzen için flexbox kullan */
+    align-items: center; /* Dikeyde ortala */
+    margin-bottom: 15px;
+  }
+  p {
+    margin: 0; /* Varsayılan boşlukları kaldır */
+}
+.instagram-baslik h4{
+  margin-left:17px;
+  margin-top: 10px;
+}
+
+
+.footer-logo{
+  margin-bottom: 50px;
+}
+.footer-column ul img{
+ margin-top: -30px;
+}
+.footer-sutun {
+ display: flex;
+flex-direction: column;
+}
+.footer-sutun ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Varsayılan margin değerlerini sıfırla */
+  padding: 10px; /* Varsayılan padding değerlerini sıfırla */
+  
+}
+.footer-sutun h3{
+  margin-bottom: 35px;
+}
