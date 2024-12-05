@@ -40,7 +40,7 @@ function SiparisKart() {
       <CardText>
       Position:Absolute Acı Burger
       </CardText>
-      <Button className='siparis-ver-button'>
+      <Button href="/siparis-olustur" className='siparis-ver-button'>
         SİPARİŞ VER
       </Button>
     </CardImgOverlay>
@@ -66,7 +66,7 @@ function SiparisKart() {
       <CardTitle tag="h5">
       Hackathlon Burger Menu
       </CardTitle>
-      <Button className='siparis-ver-button'>
+      <Button  href="/siparis-olustur" className='siparis-ver-button'>
         SİPARİŞ VER
       </Button>
       
@@ -95,7 +95,7 @@ function SiparisKart() {
               <CardTitle tag="h5" className=" text-black">
                 npm gibi kurye
               </CardTitle>
-      <Button className='siparis-ver-button'>
+      <Button  href="/siparis-olustur" className='siparis-ver-button'>
         SİPARİŞ VER
       </Button>
     </CardImgOverlay>
