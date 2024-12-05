@@ -8,6 +8,8 @@ import Success from './components/Success'
 import OrderPizza from "./components/OrderPizza"
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import HeaderPart from './components/HeaderPart';
+import SiparisKart from './components/SiparisKart';
+import FirstMenu from './components/FirstMenu';
 
 function App() {
  const [orderedData,setorderedData]=useState(null);
@@ -22,6 +24,9 @@ function App() {
       <Route exact path="/" >
 
         <HeaderPart />
+      </Route>
+      <Route path="/secenekler">
+        <SiparisKart />
       </Route>
       <Route path="/siparis-olustur">
     <OrderPizza onSubmit={handleOrder}/>
