@@ -17,11 +17,11 @@ function App() {
  }
 
   return (
-   /* <Router>
+    <Router>
       <Switch>
       <Route exact path="/" >
 
-        <Home />
+        <HeaderPart />
       </Route>
       <Route path="/siparis-olustur">
     <OrderPizza onSubmit={handleOrder}/>
@@ -30,8 +30,8 @@ function App() {
         <Success orderedData={orderedData}  />
       </Route >
       </Switch>
-    </Router>*/
-    <HeaderPart />
+    </Router>
+    
    
   )
 }
