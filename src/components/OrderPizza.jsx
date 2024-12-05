@@ -5,6 +5,8 @@ import logo from "../assets/logo.svg"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
+import logo2 from "../../Assets/Iteration-2-aseets/pictures/form-banner.png"
+import Footer from './Footer';
 
 const initialData={
   boyut:"",
@@ -38,6 +40,7 @@ function PizzaOrderForm({onSubmit}) {
   const [isValid, setIsValid] = useState(false);
 
   const history = useHistory();
+  document.body.style.backgroundColor = "white";
 
   const handleChange = (event) => {
     let { name, value, type, checked } = event.target;
@@ -88,37 +91,43 @@ function PizzaOrderForm({onSubmit}) {
     
        <header className='header'>
         <img src={logo} alt="Logo" />
+       
+      </header>
+      
+      
+       
+          <div className='beige-area'>
+          <section className='icerik-section'>
+            <img src={logo2} alt="" />
         <nav>
-        <a href="/">Anasayfa -</a>
+        <a href="/">Anasayfa </a>
+        <p>-</p>
         
-        <a href="#">Seçenekler</a>
-        
-        <a href="/siparis-olustur">- Sipariş Oluştur</a>
+        <a href="/secenekler">Seçenekler</a>
+        <p>-</p>
+        <a href="/siparis-olustur">Sipariş Oluştur</a>
         
         </nav>
-      </header>
-      <div className='form-orta'>
-      <section className='icerik-section'>
-        <div className='icerik'>
-          
-          
 
         <h2>Position Absolute Acı Pizza</h2>
         <div className='pizzaInfo'>
 
-        <h1>85.5 ₺</h1>
-            <p>4.9</p>
-            <p>(200)</p>
+        <h1 style={{color:"black"}}>85.50 ₺</h1>
+            <p style={{marginLeft:"150px"}}>4.9</p>
+            <p >(200)</p>
         </div>
         <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
+        </section>
         </div>
-
-      </section>
-
+        
+   
+      <div className='form-main'>
 
       <Form className='order-pizza-form'>
       <section className='boyut'>
+        
         <div className='form-row'>
+        <div className='boyut-container'>
         <FormGroup >
         <Label>
                 Boyut Seç*
@@ -130,7 +139,7 @@ function PizzaOrderForm({onSubmit}) {
               value="S"
               onChange={handleChange}
               />
-              <Label>Küçük</Label>
+              <Label>S</Label>
 
       </FormGroup>
       <FormGroup check>
@@ -139,7 +148,7 @@ function PizzaOrderForm({onSubmit}) {
               value="M"
               onChange={handleChange}
               />
-              <Label>Orta</Label>
+              <Label>M</Label>
 
       </FormGroup>
       <FormGroup check>
@@ -148,12 +157,12 @@ function PizzaOrderForm({onSubmit}) {
               value="L"
               onChange={handleChange}
               />
-              <Label>Büyük</Label>
+              <Label>L</Label>
 
       </FormGroup>
       </FormGroup>
-       
-
+      </div>
+        <div className='hamur-container'>
       <FormGroup >
         <Label>
                 Hamur Seç*
@@ -164,13 +173,13 @@ function PizzaOrderForm({onSubmit}) {
               onChange={handleChange}
               >
                 
-              <option value="">Hamur Kalınlığı </option>
+              <option value="">--Hamur Kalınlığı Seç-- </option>
               <option value="İnce">İnce</option>
                   <option value="Orta">Orta</option>
                   <option value="Kalın">Kalın</option> 
 </Input>
 </FormGroup>
-
+</div>
 </div>
 
 
@@ -224,8 +233,11 @@ function PizzaOrderForm({onSubmit}) {
 
                   </section>
       </Form>
+    
       </div>
+      <Footer />
       </>
+       
      )
 }
 
